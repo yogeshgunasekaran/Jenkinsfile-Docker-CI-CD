@@ -48,8 +48,6 @@ A(fetch code <br> from Git) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <b
 - In Jenkins - **Manage Credentials:**
   - Add credentials as **AWS Credentials**
   - Give the ID & Description as **awscred** and store the **Access key ID** and **Secret Access Key** here 
-- Update the Jenkinsfile respectively till here and build and run a job in jenkins
-  
 - In Jenkins - **Global Tool Configuration:**
   - Add **SonarQube Scanner**
     - configure sonarqube scanner with name as **sonar4.7**
@@ -70,3 +68,5 @@ A(fetch code <br> from Git) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <b
 - In sonarqube, click our **project &rarr; project settings &rarr; Webhooks &rarr; Create**
     - Give a name **jenkins-ci-webhook**
     - URL **http ://jenkins-ip-here:8080/sonarqube-webhook**
+- In Jenkins, create a new **job** as **Pipeline** and paste the **Jenkinsfile script** in the script section with updated details
+
