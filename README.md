@@ -1,4 +1,19 @@
 # Jenkinsfile-Docker-CI-CD
+### What are ***Containers*** ?
+Containers are a form of operating system virtualization. A single container might be used to run anything from a small microservice or software process to a larger application. Inside a container are all the necessary executables, binary code, libraries, and configuration files. Compared to server or machine virtualization approaches, however, containers do not contain operating system images. This makes them more lightweight and portable, with significantly less overhead. In larger application deployments, multiple containers may be deployed as one or more container clusters. Such clusters might be managed by a container orchestrator such as Kubernetes.
+
+### What is ***Docker*** ?
+Docker is an open platform for developing, shipping, and running applications. Docker is a platform which packages an application and all its dependencies together in the form of containers. This containerization aspect ensures that the application works in any environment. Each and every application runs on separate containers and has its own set of dependencies & libraries. This makes sure that each application is independent of other applications, giving developers surety that they can build applications that will not interfere with one another. So a developer can build a container having different applications installed on it and give it to the QA team. Then the QA team would only need to run the container to replicate the developer’s environment.
+
+### What are ***Container hosting platforms*** ?
+- Docker engine - for local development and testing environment 
+- Kubernetes - for production environment
+	- Standalone Kubernetes
+	- Amazon Elastic Kubernetes Service (EKS)
+	- Azure Container Service (AKS)
+	- Google Kubernetes Engine (GKE)
+	- Red Hat OpenShift
+- Amazon Elastic Container Service (ECS) 
 
 ### Jenkinsfile flow :
 ```mermaid
