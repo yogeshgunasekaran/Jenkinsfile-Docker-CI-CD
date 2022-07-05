@@ -45,15 +45,24 @@ A(Git <br> fetch code) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <br> co
        reboot 
        ```
 - Log into AWS <br>
-    **Create IAM User and ECR repository:** <br>
-    - In **IAM &rarr; Users &rarr; Add users**. Create a user **jenkins** and choose AWS credential type as **Access key - Programmatic access**  <br>
-    - Attach existing policies directly with **AmazonEC2ContainerRegistryFullAccess** and **AmazonECS_FullAccess** <br>
-    - In **ECR &rarr; Create respository**. Keep the visibility settings as 'Private' and a repository name. Copy and save the **repository URI** 
+    - In **IAM &rarr; Users &rarr; Add users** 
+   		- Create a user **jenkins** and choose AWS credential type as **Access key - Programmatic access**  
+        - Assign policies for the **jenkins** user, click **Attach existing policies directly** and add **AmazonEC2ContainerRegistryFullAccess** and **AmazonECS_FullAccess** policies
+    - In **ECR &rarr; Create respository**. 
+    		- Keep the visibility settings as 'Private' and a repository name.
+		- Note the **repository URI** 
+    - In **ECS &rarr; Get started &rarr; Create cluster**
+    		- Give a **Cluster name** as **sampleapp**
+		- Keep **VPC** and **subnets** as default
+		- Infrastructure as **AWS Fargate (serverless)** 
+		- In Monitoring section enable **Use Container Insights** and finally click **Create**
+		- Once the cluster been created, in **Task Definitions** &rarr; **Create new Task Definition** &rarr; **FARGATE**. Give Task definition name as **sampleapptask**. **Add container** &rarr; give container name as **sampleapp**, in **image** copy-paste the ECR docker build image **URI**
  
 - In Jenkins - **Manage Plugins:**
   - add **SonarQube Scanner** plugin
   - add **Pipeline Maven Integration** plugin
   - add **Pipeline Utility Steps** plugin
+  - add **Pipeline: AWS Steps** plugin
   - add **Build Timestamp** plugin
   - add **Amazon ECR** plugin
   - add **Amazon Web Services SDK :: All** plugin
