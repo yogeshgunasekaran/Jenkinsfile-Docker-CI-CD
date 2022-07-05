@@ -5,7 +5,7 @@
 graph LR
 A(fetch code <br> from Git) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <br> code analysis)
 -->E(sonarqube <br> code analysis) -->F(sonarqube <br> quality gate <br> check) -->G(docker <br> build <br> image)
--->H(publish image<br> to <br> AWS ECR)
+-->H(publish docker <br> image to <br> AWS ECR) -->I(Deploy <br> docker image <br> to <br> AWS ECS)
    
 ```
 ### Steps :
