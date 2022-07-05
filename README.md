@@ -48,7 +48,7 @@ A(Git <br> fetch code) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <br> co
     - In **IAM &rarr; Users &rarr; Add users** 
    		- Create a user **jenkins** and choose AWS credential type as **Access key - Programmatic access**  
         - Assign policies for the **jenkins** user, click **Attach existing policies directly** and add **AmazonEC2ContainerRegistryFullAccess** and **AmazonECS_FullAccess** policies
-    - In **ECR &rarr; Create respository** 
+    - In **ECR &rarr; Get started &rarr; Create respository** 
     	- Keep the visibility settings as 'Private' and a repository name.
 		- Note the **repository URI** 
     - In **ECS &rarr; Get started &rarr; Create cluster &rarr; Networking only**
