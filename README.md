@@ -48,15 +48,16 @@ A(Git <br> fetch code) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <br> co
     - In **IAM &rarr; Users &rarr; Add users** 
    		- Create a user **jenkins** and choose AWS credential type as **Access key - Programmatic access**  
         - Assign policies for the **jenkins** user, click **Attach existing policies directly** and add **AmazonEC2ContainerRegistryFullAccess** and **AmazonECS_FullAccess** policies
-    - In **ECR &rarr; Create respository**. 
-    		- Keep the visibility settings as 'Private' and a repository name.
+    - In **ECR &rarr; Create respository** 
+    	- Keep the visibility settings as 'Private' and a repository name.
 		- Note the **repository URI** 
-    - In **ECS &rarr; Get started &rarr; Create cluster**
-    		- Give a **Cluster name** as **sampleapp**
+    - In **ECS &rarr; Get started &rarr; Create cluster &rarr; Networking only**
+    	- Give a **Cluster name** as **sampleapp**
 		- Keep **VPC** and **subnets** as default
 		- Infrastructure as **AWS Fargate (serverless)** 
-		- In Monitoring section enable **Use Container Insights** and finally click **Create**
-		- Once the cluster been created, in **Task Definitions** &rarr; **Create new Task Definition** &rarr; **FARGATE**. Give Task definition name as **sampleapptask**. **Add container** &rarr; give container name as **sampleapp**, in **image** copy-paste the ECR docker build image **URI**
+		- Checklist **Enable Container Insights** and finally click **Create**
+		- Once the cluster has been created, in **Task Definitions** &rarr; **Create new Task Definition** &rarr; **FARGATE**. Give Task definition name as **sampleapptask**. Choose **Operating system family** as **Linux**, **Task memory** as **2GB(minimum)** and **Task CPU** as **1vCPU(minimum)**. Click **Add container** &rarr; give container name as **sampleapp** and in **image** copy-paste the ECR docker build image **URI**, add the respective container **port mappings** for the applications thats runs in the container. Keep the remaining options as is in default and **Create** task definition.
+		- Now, in **Clusters &rarr; sampleapp &rarr;** in services section **Deploy**
  
 - In Jenkins - **Manage Plugins:**
   - add **SonarQube Scanner** plugin
