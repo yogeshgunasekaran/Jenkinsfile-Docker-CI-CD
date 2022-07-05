@@ -35,24 +35,26 @@ A(fetch code <br> from Git) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <b
     - Attach existing policies directly with **AmazonEC2ContainerRegistryFullAccess** and **AmazonECS_FullAccess** <br>
     - In **ECR &rarr; Create respository**. Keep the visibility settings as 'Private' and a repository name. Copy and save the **repository URI** 
  
-- In Jenkins server - **Manage Plugins:**
+- In Jenkins - **Manage Plugins:**
   - add **SonarQube Scanner** plugin
   - add **Pipeline Maven Integration** plugin
   - add **Pipeline Utility Steps** plugin
   - add **Build Timestamp** plugin
-  - add **ECR** plugin
-  - add **docker pipeline** plugin
-  - add **aws sdk for credentials** plugin
+  - add **Amazon ECR** plugin
+  - add **Amazon Web Services SDK :: All** plugin
+  - add **Docker Pipeline** plugin
+  - add **CloudBees Docker Build and Publish** plugin
   
-- In Jenkins server - **Manage Credentials:**
-  - Add credentials as **username and password**
-  - Give the nexus server username and password and ID & Description as **nexus-login**
+- In Jenkins - **Manage Credentials:**
+  - Add credentials as **AWS Credentials**
+  - Give the ID & Description as **awscred** and store the **Access key ID** and **Secret Access Key** here 
+- Update the Jenkinsfile respectively till here and build and run a job in jenkins
   
-- In Jenkins server - **Global Tool Configuration:**
+- In Jenkins - **Global Tool Configuration:**
   - Add **SonarQube Scanner**
     - configure sonarqube scanner with name as **sonar4.7**
     
-- In Jenkins server - **Configure System:** <br>
+- In Jenkins - **Configure System:** <br>
   - configure sonarqube server details and integrate it with jenkins,
     - checkbox the **Environmental variables**
     - add name as **sonar**
@@ -63,8 +65,8 @@ A(fetch code <br> from Git) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <b
     - checkmark **Enable Build Timestamp**
     - choose the required **timezone** and its **pattern** 
     
-- In sonarqube server create **Quality Gate** with required **conditions**  
-- In sonarqube server click our **project &rarr; project settings &rarr; select the Quality Gate** that has been created
-- In sonarqube server click our **project &rarr; project settings &rarr; Webhooks &rarr; Create**
+- In sonarqube, create **Quality Gate** with required **conditions**  
+- In sonarqube, click our **project &rarr; project settings &rarr; select the Quality Gate** that has been created
+- In sonarqube, click our **project &rarr; project settings &rarr; Webhooks &rarr; Create**
     - Give a name **jenkins-ci-webhook**
     - URL **http ://jenkins-ip-here:8080/sonarqube-webhook**
