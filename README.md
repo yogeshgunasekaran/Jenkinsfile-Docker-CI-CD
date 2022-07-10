@@ -86,10 +86,10 @@ A(Git <br> fetch code) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <br> co
 - In sonarqube, click our **project &rarr; project settings &rarr; Webhooks &rarr; Create**
     - Give a name **jenkins-ci-webhook**
     - URL **http ://jenkins-ip-here:8080/sonarqube-webhook**
-- In Jenkins, create a new **job** as **Pipeline** and paste the **Jenkinsfile script** in the script section with updated details
+- Update the variables **"registryCredential, appRegistry, vprofileRegistry"** in **Jenkinsfile_stage1** with this project details 
+- In Jenkins, create **New item → Pipelin** and paste the updated **Jenkinsfile_stage1** in the script section and build the job
 
-
- - In **ECS &rarr;** click and switch to &rarr; **New ECS Experience** &rarr; **Get started &rarr; Create cluster**
+- In **ECS &rarr;** click and switch to &rarr; **New ECS Experience** &rarr; **Get started &rarr; Create cluster**
     	- Give a **Cluster name** as **sampleapp**
 		- Keep **VPC** and **subnets** as default
 		- Infrastructure as **AWS Fargate (serverless)** would have been selected by default
