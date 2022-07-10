@@ -24,7 +24,7 @@ A(Git <br> fetch code) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <br> co
    
 ```
 ### Steps :
-#### <ins> *Note* </ins>  : Keep updating the Jenkinsfile while doing the following steps stage-by-stage.
+#### <ins> *Note* </ins>  : Keep updating the Jenkinsfile in the pipeline job while doing the following steps stage-by-stage.
 - Create three servers for: ([Click here for installation and provisioning of the servers](https://github.com/yogeshgunasekaran/Automated-Provisioning-Project-2))
     - **Jenkins**
     - **SonarQube**
