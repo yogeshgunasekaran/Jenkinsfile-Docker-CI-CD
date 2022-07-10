@@ -81,7 +81,7 @@ A(Git <br> fetch code) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <br> co
   - configure sonarqube server details and integrate it with jenkins,
     - checkbox the **Environmental variables**
     - add name as **sonar**
-    - add server url **http ://sonarqube-ip:9000**
+    - add server url **http ://sonarqube-private-ip:9000**
     - Go to **sonarqube server &rarr; administrator &rarr; Security &rarr; Generate tokens** 
     - Add credentials as **secret text** with sonarqube token and ID & Description as **MySonarToken**
   - configure Build Timestamp
