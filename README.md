@@ -51,12 +51,12 @@ A(Git <br> fetch code) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <br> co
     - In **ECR &rarr; Get started &rarr; Create respository** 
     	- Keep the visibility settings as 'Private' and a repository name.
 		- Note the **repository URI** 
-    - In **ECS &rarr; Get started &rarr; Create cluster &rarr; Networking only**
+    - In **ECS &rarr;** click and switch to &rarr; **New ECS Experience** &rarr; **Get started &rarr; Create cluster**
     	- Give a **Cluster name** as **sampleapp**
 		- Keep **VPC** and **subnets** as default
-		- Infrastructure as **AWS Fargate (serverless)** 
-		- Checklist **Enable Container Insights** and finally click **Create**
-		- Once the cluster has been created, in **Task Definitions** &rarr; **Create new Task Definition** &rarr; **FARGATE**. Give Task definition name as **sampleapptask**. Choose **Operating system family** as **Linux**, **Task memory** as **2GB(minimum)** and **Task CPU** as **1vCPU(minimum)**. Click **Add container** &rarr; give container name as **sampleapp** and in **image** copy-paste the ECR docker build image **URI**, add the respective container **port mappings** for the applications thats runs in the container. Keep the remaining options as is in default and **Create** task definition.
+		- Infrastructure as **AWS Fargate (serverless)** would have been selected by default
+		- In **Monitoring - optional** section, checklist **Use Container Insights** and finally click **Create**
+		- Once the cluster has been created, click the hamburger button on the top left-hand side and go to the **Task Definitions** &rarr; **Create new Task Definition**. Give Task definition name as **sampleapptask**. Choose **Operating system family** as **Linux**, **Task memory** as **2GB(minimum)** and **Task CPU** as **1vCPU(minimum)**. Click **Add container** &rarr; give container name as **sampleapp** and in **image** copy-paste the ECR docker build image **URI**, add the respective container **port mappings** for the applications thats runs in the container. Keep the remaining options as is in default and **Create** task definition.
 		- Now, in **Clusters &rarr; sampleapp &rarr;** in services section **Deploy**
  
 - In Jenkins - **Manage Plugins:**
