@@ -50,7 +50,7 @@ A(Git <br> fetch code) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <br> co
         - Assign policies for the **jenkins** user, click **Attach existing policies directly** and add **AmazonEC2ContainerRegistryFullAccess** and **AmazonECS_FullAccess** policies
 	 - In **ECR &rarr; Get started &rarr; Create respository** 
   	  	- Keep the visibility settings as 'Private' and the repository name as **vprofileappimg**
-			- Note the **repository URI** 
+		- Note the **repository URI** 
    
 - In Jenkins - **Manage Plugins:**
   - add **SonarQube Scanner** plugin
