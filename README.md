@@ -87,7 +87,7 @@ A(Git <br> fetch code) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <br> co
     - Give a name **jenkins-ci-webhook**
     - URL **http ://jenkins-ip-here:8080/sonarqube-webhook**
 - Update the variables **"registryCredential, appRegistry, vprofileRegistry"** in **Jenkinsfile_stage1** with this project details 
-- In Jenkins, create **New item → Pipelin** and paste the updated **Jenkinsfile_stage1** in the script section and build the job
+- In Jenkins, create **New item → Pipeline** and paste the updated **Jenkinsfile_stage1** in the script section and build the job
 
 - In **ECS &rarr;** click and switch to &rarr; **New ECS Experience** &rarr; **Get started &rarr; Create cluster**
     	- Give a **Cluster name** as **sampleapp**
