@@ -48,17 +48,10 @@ A(Git <br> fetch code) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <br> co
     - In **IAM &rarr; Users &rarr; Add users** 
    		- Create a user **jenkins** and choose AWS credential type as **Access key - Programmatic access**  
         - Assign policies for the **jenkins** user, click **Attach existing policies directly** and add **AmazonEC2ContainerRegistryFullAccess** and **AmazonECS_FullAccess** policies
-    - In **ECR &rarr; Get started &rarr; Create respository** 
-    	- Keep the visibility settings as 'Private' and the repository name as **vprofileappimg**
-		- Note the **repository URI** 
-    - In **ECS &rarr;** click and switch to &rarr; **New ECS Experience** &rarr; **Get started &rarr; Create cluster**
-    	- Give a **Cluster name** as **sampleapp**
-		- Keep **VPC** and **subnets** as default
-		- Infrastructure as **AWS Fargate (serverless)** would have been selected by default
-		- In **Monitoring - optional** section, checklist **Use Container Insights** and finally click **Create**
-		- Once the cluster has been created, click the hamburger button on the top left-hand side and go to the **Task Definitions** &rarr; **Create new Task Definition**. Give Task definition name as **sampleapptask**. Choose **Operating system family** as **Linux**, **Task memory** as **2GB(minimum)** and **Task CPU** as **1vCPU(minimum)**. Click **Add container** &rarr; give container name as **sampleapp** and in **image** copy-paste the ECR docker build image **URI**, add the respective container **port mappings** for the applications thats runs in the container. Keep the remaining options as is in default and **Create** task definition.
-		- Now, in **Clusters &rarr; sampleapp &rarr;** in services section **Deploy**
- 
+	 - In **ECR &rarr; Get started &rarr; Create respository** 
+  	  	- Keep the visibility settings as 'Private' and the repository name as **vprofileappimg**
+			- Note the **repository URI** 
+   
 - In Jenkins - **Manage Plugins:**
   - add **SonarQube Scanner** plugin
   - add **Pipeline Maven Integration** plugin
@@ -94,4 +87,14 @@ A(Git <br> fetch code) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <br> co
     - Give a name **jenkins-ci-webhook**
     - URL **http ://jenkins-ip-here:8080/sonarqube-webhook**
 - In Jenkins, create a new **job** as **Pipeline** and paste the **Jenkinsfile script** in the script section with updated details
+
+
+ - In **ECS &rarr;** click and switch to &rarr; **New ECS Experience** &rarr; **Get started &rarr; Create cluster**
+    	- Give a **Cluster name** as **sampleapp**
+		- Keep **VPC** and **subnets** as default
+		- Infrastructure as **AWS Fargate (serverless)** would have been selected by default
+		- In **Monitoring - optional** section, checklist **Use Container Insights** and finally click **Create**
+		- Once the cluster has been created, click the hamburger button on the top left-hand side and go to the **Task Definitions** &rarr; **Create new Task Definition**. Give Task definition name as **sampleapptask**. Choose **Operating system family** as **Linux**, **Task memory** as **2GB(minimum)** and **Task CPU** as **1vCPU(minimum)**. Click **Add container** &rarr; give container name as **sampleapp** and in **image** copy-paste the ECR docker build image **URI**, add the respective container **port mappings** for the applications thats runs in the container. Keep the remaining options as is in default and **Create** task definition.
+		- Now, in **Clusters &rarr; sampleapp &rarr;** in services section **Deploy**
+ 
 
