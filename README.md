@@ -49,7 +49,7 @@ A(Git <br> fetch code) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <br> co
    		- Create a user **jenkins** and choose AWS credential type as **Access key - Programmatic access**  
         - Assign policies for the **jenkins** user, click **Attach existing policies directly** and add **AmazonEC2ContainerRegistryFullAccess** and **AmazonECS_FullAccess** policies
     - In **ECR &rarr; Get started &rarr; Create respository** 
-    	- Keep the visibility settings as 'Private' and a repository name.
+    	- Keep the visibility settings as 'Private' and the repository name as **vprofileappimg**
 		- Note the **repository URI** 
     - In **ECS &rarr;** click and switch to &rarr; **New ECS Experience** &rarr; **Get started &rarr; Create cluster**
     	- Give a **Cluster name** as **sampleapp**
