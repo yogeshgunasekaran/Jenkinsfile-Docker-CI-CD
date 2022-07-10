@@ -90,7 +90,7 @@ A(Git <br> fetch code) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <br> co
 - In Jenkins, create **New item → Pipeline** and paste the updated **Jenkinsfile_stage1** in the script section and build the job
 
 - In **ECS &rarr;** click and switch to &rarr; **New ECS Experience** &rarr; **Get started &rarr; Create cluster**
-    	- Give a **Cluster name** as **sampleapp**
+    	- Give a **Cluster name** as **vprofile**
 		- Keep **VPC** and **subnets** as default
 		- Infrastructure as **AWS Fargate (serverless)** would have been selected by default
 		- In **Monitoring - optional** section, checklist **Use Container Insights** and finally click **Create**
