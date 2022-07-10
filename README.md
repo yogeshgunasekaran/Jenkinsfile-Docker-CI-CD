@@ -94,7 +94,7 @@ A(Git <br> fetch code) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <br> co
 		- Keep **VPC** and **subnets** as default
 		- Infrastructure as **AWS Fargate (serverless)** would have been selected by default
 		- In **Monitoring - optional** section, checklist **Use Container Insights** and finally click **Create**
-		- Once the cluster has been created, click the hamburger button on the top left-hand side and go to the **Task Definitions** &rarr; **Create new Task Definition**. Give Task definition name as **sampleapptask**. Choose **Operating system family** as **Linux**, **Task memory** as **2GB(minimum)** and **Task CPU** as **1vCPU(minimum)**. Click **Add container** &rarr; give container name as **sampleapp** and in **image** copy-paste the ECR docker build image **URI**, add the respective container **port mappings** for the applications thats runs in the container. Keep the remaining options as is in default and **Create** task definition.
-		- Now, in **Clusters &rarr; sampleapp &rarr;** in services section **Deploy**
+		- Once the cluster has been created, click the hamburger button on the top left-hand side and go to the **Task Definitions** &rarr; **Create new Task Definition**. Give Task definition name as **vprofileapptask**. Choose **Operating system family** as **Linux**, **Task memory** as **2GB(minimum)** and **Task CPU** as **1vCPU(minimum)**. Click **Add container** &rarr; give container Name as **vproapp** and for Image URI - copy-paste the **ECR** docker build image **URI**, add the respective container **port mappings** for the applications thats runs in the container, for this project add **port-8080**. Keep the remaining options as is in default and **Create** task definition.
+		- Now, in **Clusters &rarr; vprofile &rarr;** in services section **Deploy**
  
 
