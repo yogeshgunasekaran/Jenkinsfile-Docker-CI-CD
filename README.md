@@ -102,5 +102,5 @@ A(Git <br> fetch code) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <br> co
   - ECS will keep performing to delete all the unhealthy tasks and recreating tasks until it gets an healthy status. 
   - A **healthy** task will spinup in sometime as the health checks will be passed now, after updated the Load balancer's target group port to 8080
   - In **EC2 &rarr; Security Groups &rarr; vproappecselb-sg**. Change this load balancer security group inbound rules, **add 2 rules for port 8080 from anywhere for IPV4 and IPV6** 
-
+  - The project is now successfully deployed in the AWS ECS which can be accessed via **ECS &rarr; Clusters &rarr; vprofile &rarr; Services &rarr; vprofileappsvc &rarr; Networking &rarr; DNS names** link 
 
