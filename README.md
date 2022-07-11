@@ -86,7 +86,7 @@ A(Git <br> fetch code) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <br> co
 - In sonarqube, click our **project &rarr; project settings &rarr; Webhooks &rarr; Create**
     - Give a name **jenkins-ci-webhook**
     - URL **http ://jenkins-private-ip-here:8080/sonarqube-webhook**
-- Update the variables **"registryCredential, appRegistry, vprofileRegistry"** in **Jenkinsfile_stage1** with this project details 
+- Update the global environment variables **"registryCredential, appRegistry, vprofileRegistry"** in **Jenkinsfile_stage1** with this project details 
 - In Jenkins, create **New item → Pipeline** and paste the updated **Jenkinsfile_stage1** in the script section and build the job
 - Now our project has been mvn tested, mvn code analyzed, sonarqube code analyzed, sonarqube quality gate checked. In SonarQube, we can see our project code analzyed reports. In the container level the code is been build as artifact and then the docker image is build and published the docker image to the AWS ECR
 
@@ -104,4 +104,8 @@ A(Git <br> fetch code) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <br> co
   - A **healthy** task will spinup in sometime as the health checks will be passed now, after updated the Load balancer's target group port to 8080
   - In **EC2 &rarr; Security Groups &rarr; vproappecselb-sg**. Change this load balancer security group inbound rules, **add 2 rules for port 8080 from anywhere for IPV4 and IPV6** 
   - The project is now successfully deployed in the AWS ECS which can be accessed via **ECS &rarr; Clusters &rarr; vprofile &rarr; Services &rarr; vprofileappsvc &rarr; Networking &rarr; DNS names** link 
+  - Update the global environment variables **"cluster and service"** in **Jenkinsfile_stage2** with this project details 
+  - In Jenkins, now update the same job with **Jenkinsfile_stage2** code and Build the job again
+  - Now our project has been mvn tested, mvn code analyzed, sonarqube code analyzed, sonarqube quality gate checked. In SonarQube, we can see our project code analzyed reports. In the container level the code is been build as artifact and then the docker image is build and published the docker image to the AWS ECR and finally the docker image is deployed in the AWS ECR and our project web-application is now online which can be accessed with the ECS load balancer DNS name link
+
 
