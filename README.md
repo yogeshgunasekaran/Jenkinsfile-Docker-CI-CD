@@ -85,7 +85,7 @@ A(Git <br> fetch code) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <br> co
 - In sonarqube, click our **project &rarr; project settings &rarr; select the Quality Gate** that has been created
 - In sonarqube, click our **project &rarr; project settings &rarr; Webhooks &rarr; Create**
     - Give a name **jenkins-ci-webhook**
-    - URL **http ://jenkins-ip-here:8080/sonarqube-webhook**
+    - URL **http ://jenkins-private-ip-here:8080/sonarqube-webhook**
 - Update the variables **"registryCredential, appRegistry, vprofileRegistry"** in **Jenkinsfile_stage1** with this project details 
 - In Jenkins, create **New item → Pipeline** and paste the updated **Jenkinsfile_stage1** in the script section and build the job
 
