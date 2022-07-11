@@ -111,4 +111,10 @@ A(Git <br> fetch code) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <br> co
   - In Jenkins, now update the same job with **Jenkinsfile_stage2** code and Build the job again
   - Now our project has been mvn tested, mvn code analyzed, sonarqube code analyzed, sonarqube quality gate checked. In SonarQube, we can see our project code analzyed reports. In the container level the code is been build as artifact and then the docker image is build and published the docker image to the AWS ECR and finally the docker image is deployed in the AWS ECR and our project web-application is now online which can be accessed with the ECS load balancer DNS name link
 
-
+#### <ins> *Note* </ins>  : For the termination of Amazon Elastic Container Service - clusters
+> - **Clusters** cannot be directly deleted
+> - **ECR  &rarr; Clusters  &rarr; vprofile  &rarr; Services &rarr; vprofileappsvc &rarr; Edit**
+> - Change the **Desired tasks** to **0**  &rarr; **Update** <br>
+> - **ECR  &rarr; Clusters  &rarr; vprofile  &rarr; Services &rarr; vprofileappsvc &rarr; Delete**  <br>
+> - **ECR  &rarr; Clusters  &rarr; vprofile  &rarr; Delete cluster** <br>
+>   
