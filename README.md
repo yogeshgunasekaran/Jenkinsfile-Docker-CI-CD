@@ -88,6 +88,7 @@ A(Git <br> fetch code) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <br> co
     - URL **http ://jenkins-private-ip-here:8080/sonarqube-webhook**
 - Update the variables **"registryCredential, appRegistry, vprofileRegistry"** in **Jenkinsfile_stage1** with this project details 
 - In Jenkins, create **New item → Pipeline** and paste the updated **Jenkinsfile_stage1** in the script section and build the job
+- Now our project has been mvn tested, mvn code analyzed, sonarqube code analyzed, sonarqube quality gate checked. In SonarQube, we can see our project code analzyed reports. In the container level the code is been build as artifact and then the docker image is build and published the docker image to the AWS ECR
 
 - In **ECS &rarr;** click and switch to &rarr; **New ECS Experience** &rarr; **Get started &rarr; Create cluster**
   - Give a **Cluster name** as **vprofile**
