@@ -32,6 +32,9 @@ A(Git <br> fetch code) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <br> co
 - Log into Jenkins server as root user and install **docker engine** from this [official docker documentation](https://docs.docker.com/engine/install/#server)
    - Add the jenkins user into to docker group 
        ```sh 
+       sudo -i 
+       ```
+       ```sh 
        id jenkins 
        ```
        ```sh 
