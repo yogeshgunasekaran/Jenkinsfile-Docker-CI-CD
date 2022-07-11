@@ -68,7 +68,7 @@ A(Git <br> fetch code) -->C(mvn <br> unit test) -->D(mvn <br> checkstyle <br> co
   
 - In Jenkins - **Manage Credentials:**
   - Add credentials as **AWS Credentials**
-  - Give the **ID & Description** as **awscred** and store the **Access key ID** and **Secret Access Key** here 
+  - Give the **ID & Description** as **awscreds** and store the **Access key ID** and **Secret Access Key** here 
 - In Jenkins - **Global Tool Configuration:**
   - Add **SonarQube Scanner**
     - configure sonarqube scanner with name as **sonar4.7**
